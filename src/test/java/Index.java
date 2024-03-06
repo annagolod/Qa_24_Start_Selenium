@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,6 +16,15 @@ public class Index {
     public void setUp(){
         wd = new ChromeDriver();
         wd.get("file:///Users/annagolod/Library/Mobile%20Documents/com~apple~CloudDocs/21.index.html");
+    }
+
+    @Test
+    public void tableTest(){
+// Canada
+        WebElement canada = wd.findElement(By.cssSelector("tr:nth-child(3) td:last-child"));
+        WebElement canada1 = wd.findElement(By.xpath("//*[text()='Canada']"));
+        Assert.assertEquals(canada.getText(), "Canada");
+
     }
 
     @Test

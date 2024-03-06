@@ -40,11 +40,15 @@ List<WebElement> listInput = wd.findElements(By.cssSelector("input"));
 
 WebElement tN9 = wd.findElement(By.tagName("button"));
 WebElement tN10 = wd.findElement(By.cssSelector("button"));
+WebElement tN11 = wd.findElement(By.xpath("//button"));
 
         //by class
 
         WebElement cl1 = wd.findElement(By.className("container"));
         WebElement cl2 = wd.findElement(By.cssSelector(".container"));
+        WebElement cl9 = wd.findElement(By.xpath("//*[@class='container']"));
+        WebElement cl10 = wd.findElement(By.xpath("//div[@class='container']"));
+
 
         WebElement cl3 = wd.findElement(By.className("navbar-component_nav__1X_4m"));
         WebElement cl4 = wd.findElement(By.cssSelector(".navbar-component_nav__1X_4m"));
@@ -59,6 +63,8 @@ WebElement tN10 = wd.findElement(By.cssSelector("button"));
 WebElement id1 = wd.findElement(By.id("root"));
 WebElement id2 = wd.findElement(By.cssSelector("#root"));
 WebElement id3 = wd.findElement(By.cssSelector("[id='root']"));
+WebElement id4 = wd.findElement(By.xpath("//*[@id='root']"));
+
 
         //by attribute
 
@@ -72,17 +78,24 @@ WebElement id3 = wd.findElement(By.cssSelector("[id='root']"));
         WebElement el8 = wd.findElement(By.cssSelector("[type='submit']"));
         WebElement el9 = wd.findElement(By.cssSelector("[name='login']"));
         WebElement el10 = wd.findElement(By.name("registration"));
+        WebElement el14 = wd.findElement(By.xpath("//input[@placeholder='Email']"));
 
         //one of elements find by attribute ==> start & end & contains value
 
         WebElement el11 = wd.findElement(By.cssSelector("[style ^= 'border']"));
+        WebElement el15 = wd.findElement(By.xpath("//*[starts-with(@placeholder, 'Em')]"));
         WebElement el12 = wd.findElement(By.cssSelector("[style $= 'white;']"));
+        // for end   in xPath we can use "contains"
         WebElement el13 = wd.findElement(By.cssSelector("[style *= 'black']"));
+        WebElement el16 = wd.findElement(By.xpath("//*[contains(@placeholder, 'ss')]"));
 
         //by linkText (partialLinkText)
 
-        WebElement el14 = wd.findElement(By.linkText("HOME"));
-        WebElement el15 = wd.findElement(By.partialLinkText("LOG"));
+        WebElement el18 = wd.findElement(By.linkText("HOME"));
+        WebElement el19 = wd.findElement(By.partialLinkText("LOG"));
+
+        //by text
+        WebElement el17 = wd.findElement(By.xpath("//a[text() = 'ABOUT']"));
 
     }
     @AfterClass
